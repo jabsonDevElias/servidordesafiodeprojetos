@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize,Model, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize('desafiadordeprojetos', 'postgres',"12345", {
   host: 'localhost',     
@@ -12,4 +12,6 @@ try {
   console.error('Não foi possível conectar ao banco de dados:', error);
 }
 
-// module.exports = sequelize;
+
+
+module.exports = sequelize;
