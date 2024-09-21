@@ -21,6 +21,8 @@ const Tecnologias = sequelize.define(
   );
 
 //   (async () => {
-//     await sequelize.sync({ force: true });
+//     await sequelize.sync({ force: false });
 //     // Code here
 //   })();
+
+module.exports = Tecnologias;
