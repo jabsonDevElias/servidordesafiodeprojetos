@@ -21,26 +21,6 @@ app.use(bodyParser.json());
 
 app.use(express.static('public')); //ADICIONA ARQUIVOS ESTÁTIVOS
 
-app.post('/cadastrar',(req,res,next) => {
-  
-    const nomeProjeto = req.body.nomeProjeto;
-    const frontEnd = req.body.frontEnd;
-    const backEnd = req.body.backEnd;
-    const bandoDados = req.body.bandoDados;
-    const devOps = req.body.devOps;
-
-    (async () => {
-      try {
-        // Buscar todas as categorias
-        const categorias = await Categorias.findAll();  
-        // Exibir os resultados
-        res.json(categorias);
-      } catch (error) {
-        console.error('Erro ao buscar categorias:', error);
-      }
-    })();
-})
-
 app.get('/tecnologias/:tipo',(req,res,next) => {
     const tipo = req.params.tipo;
     if(tipo){
